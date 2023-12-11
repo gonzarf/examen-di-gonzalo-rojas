@@ -14,12 +14,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
-public class SplashScreen extends AppCompatActivity {
+public class Arranque extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_arranque);
         openLogin();
 
         ImageView logoSplash = findViewById(R.id.logoSplash);
@@ -41,7 +41,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                Intent intent = new Intent(Arranque.this, Acceso.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
