@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/hlogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/h2logo"
+        android:src="@drawable/iconolibro"
+        />
+
+    <TextView
+        android:id="@+id/nombreApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotoblack"
+        android:text="@string/app_name"
+        android:textColor="@color/grisazulado"
+        android:textSize="55dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/hnombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hlogo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h2registro"
+        app:layout_constraintBottom_toTopOf="@id/h1registro"
+        app:layout_constraintStart_toEndOf="@+id/v1"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        app:startIconDrawable="@drawable/usericon"
+        app:boxStrokeColor="@color/material_dynamic_primary30"
+        >
+
+        <EditText
+            android:id="@+id/n"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="USUARIO" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/h1registro"
+        app:layout_constraintBottom_toTopOf="@id/hcontra"
+        app:layout_constraintStart_toEndOf="@+id/v1"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/passwordicon"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:hint="CONTRASEÑA"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="RECUÉRDAME"
+        app:layout_constraintStart_toEndOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/hcontra"
+        app:layout_constraintBottom_toTopOf="@id/hcheckbox"/>
+
+    <TextView
+        android:id="@+id/resetpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olvide mi contarseña"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:onClick="showalert"
+        android:textColor="@color/material_dynamic_primary40"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        app:layout_constraintTop_toBottomOf="@id/hcontra"
+        app:layout_constraintBottom_toTopOf="@id/hcheckbox"
+        />
+
+
+    <Button
+        android:id="@+id/botonentrar"
+        android:layout_width="200dp"
+        android:layout_height="58dp"
+        android:text="ENTRAR"
+        app:layout_constraintTop_toBottomOf="@id/h1botones"
+        app:layout_constraintBottom_toTopOf="@id/botonregistrar"
+        app:layout_constraintStart_toEndOf="@id/v1"
+        app:layout_constraintEnd_toStartOf="@id/v2" />
+
+    <Button
+        android:id="@+id/botonregistrar"
+        android:layout_width="200dp"
+        android:layout_height="58dp"
+        android:text="REGISTRARSE"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/botonentrar"
+        app:layout_constraintBottom_toTopOf="@id/h2botones"
+        app:layout_constraintStart_toEndOf="@id/v1"
+        app:layout_constraintEnd_toStartOf="@id/v2" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/v1"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        android:text="© 2023 SoccerScout | GPLv3 "
+
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hlogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hnombre"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1registro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hcontra"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2registro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hcheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1botones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2botones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
